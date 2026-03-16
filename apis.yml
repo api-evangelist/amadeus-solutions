@@ -1,106 +1,25 @@
+aid: amadeus-solutions
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/apis.yml
 name: Amadeus Solutions
-description: Amadeus is a leading technology partner for the global travel industry, providing search, pricing, booking, ticketing and other processing solutions for travel providers and travel agencies worldwide.
-image: https://amadeus.com/images/logo.png
-url: https://amadeus.com
-created: '2024'
-modified: '2024'
-specificationVersion: '0.16'
 tags:
-- travel
-- booking
-- flights
-- hotels
-- APIs
-apis:
-- name: Amadeus Flight APIs
-  description: Search and book flights across hundreds of airlines worldwide
-  image: https://amadeus.com/images/flight-api-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/air
-  baseURL: https://api.amadeus.com/v2
-  tags:
-  - flights
-  - booking
-  - search
-  - travel
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/air/api-doc
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/air/api-doc/file/spec.yaml
-  - type: Authentication
-    url: https://developers.amadeus.com/self-service/apis-docs/guides/authorization
-  - type: Pricing
-    url: https://developers.amadeus.com/pricing
-  - type: SignUp
-    url: https://developers.amadeus.com/register
-- name: Amadeus Hotel APIs
-  description: Search, book and manage hotel reservations globally
-  image: https://amadeus.com/images/hotel-api-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/hotel
-  baseURL: https://api.amadeus.com/v3
-  tags:
-  - hotels
-  - accommodation
-  - booking
-  - travel
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/hotel/api-doc
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/hotel/api-doc/file/spec.yaml
-  - type: Authentication
-    url: https://developers.amadeus.com/self-service/apis-docs/guides/authorization
-  - type: Pricing
-    url: https://developers.amadeus.com/pricing
-- name: Amadeus Destination Content API
-  description: Access points of interest, activities, and destination information
-  image: https://amadeus.com/images/destination-api-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/destination-content
-  baseURL: https://api.amadeus.com/v1
-  tags:
-  - destinations
-  - points of interest
-  - activities
-  - travel content
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/file/spec.yaml
-- name: Amadeus Trip APIs
-  description: Build and manage complete trip itineraries
-  image: https://amadeus.com/images/trip-api-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/trip
-  baseURL: https://api.amadeus.com/v1
-  tags:
-  - itinerary
-  - trip planning
-  - travel
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/trip/api-doc
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/trip/api-doc/file/spec.yaml
+  - Travel
+  - Booking
+  - Flights
+  - Hotels
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+description: >-
+  Amadeus is a leading technology partner for the global travel industry,
+  providing search, pricing, booking, ticketing and other processing solutions
+  for travel providers and travel agencies worldwide.
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis: []
 common:
-- type: Portal
-  url: https://developers.amadeus.com
-- type: Getting Started
-  url: https://developers.amadeus.com/get-started
-- type: Authentication
-  url: https://developers.amadeus.com/self-service/apis-docs/guides/authorization
-- type: SDKs
-  url: https://github.com/amadeus4dev
-- type: Blog
-  url: https://developers.amadeus.com/blog
-- type: Support
-  url: https://developers.amadeus.com/support
-- type: Terms of Service
-  url: https://developers.amadeus.com/terms-of-use
-- type: Privacy Policy
-  url: https://amadeus.com/en/privacy-policy
-- type: Status
-  url: https://developers.amadeus.com/status
+  - url: https://developers.amadeus.com/
+    type: Portal
 maintainers:
-- FN: Amadeus for Developers
-  email: developers@amadeus.com
-  url: https://developers.amadeus.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
