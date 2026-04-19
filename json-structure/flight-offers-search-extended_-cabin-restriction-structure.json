@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/flight-offers-search-extended_-cabin-restriction-structure.json",
+  "name": "Extended_CabinRestriction",
+  "description": "Extended_CabinRestriction schema",
+  "allOf": [
+    {
+      "$ref": "#/definitions/CabinRestriction"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "coverage": {
+          "$ref": "#/definitions/Coverage"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/seat-map-display-seat-schema.json",
+  "title": "Seat",
+  "description": "Seat schema",
+  "type": "object",
+  "properties": {
+    "cabin": {
+      "description": "Cabin of the seat.",
+      "type": "string",
+      "example": "ECO"
+    },
+    "number": {
+      "description": "Concatenation of the row id and the column id, for example 12B",
+      "type": "string",
+      "example": "12B"
+    },
+    "characteristicsCodes": {
+      "description": "List of seat characteristics (the characteristic's names can be retrieved in the seat characteristic dictionary) Possible values are part of:\n\n  IATA code: Most of the codes are defined by IATA Standard/IATA Code list 9825\n\n  Amadeus Code: defined as extension, example MV=row with movie screen\n\n  Seat map display Code: API specific codes, example 1A_AQC_PREMIUM_SEAT=premium seat",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "travelerPricing": {
+      "description": "Traveler's information and price",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SeatmapTravelerPricing"
+      }
+    },
+    "coordinates": {
+      "$ref": "#/definitions/Coordinates"
+    }
+  }
+}

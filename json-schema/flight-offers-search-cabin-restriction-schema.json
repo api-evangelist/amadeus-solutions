@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-cabin-restriction-schema.json",
+  "title": "CabinRestriction",
+  "description": "CabinRestriction schema",
+  "type": "object",
+  "properties": {
+    "cabin": {
+      "$ref": "#/definitions/TravelClass"
+    },
+    "originDestinationIds": {
+      "title": "originDestinationIds",
+      "description": "The list of originDestination identifiers for which the cabinRestriction applies",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        1,
+        2
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-coverage-schema.json",
+  "title": "Coverage",
+  "description": "part of the trip covered by the travel class restriction (ALL_SEGMENTS if ommited)",
+  "type": "string",
+  "enum": [
+    "MOST_SEGMENTS",
+    "AT_LEAST_ONE_SEGMENT",
+    "ALL_SEGMENTS"
+  ],
+  "example": "MOST_SEGMENTS"
+}

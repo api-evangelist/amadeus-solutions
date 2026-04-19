@@ -1,0 +1,76 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amadeus Flight Offers Price API
+  description: Shared capability for confirming flight offer pricing before booking.
+  tags:
+    - Amadeus
+    - Flights
+    - Pricing
+    - Travel
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMADEUS_BEARER_TOKEN: AMADEUS_BEARER_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: flight-offers-price
+      baseUri: https://test.api.amadeus.com/v1
+      description: Amadeus Flight Offers Price API.
+      authentication:
+        type: bearer
+        token: "{{AMADEUS_BEARER_TOKEN}}"
+      resources:
+        - name: shopping-flight-offers-pricing
+          path: /shopping/flight-offers/pricing
+          description: Confirm and reprice flight offers.
+          operations:
+            - name: confirm-flight-price
+              method: POST
+              description: Confirm the current price and availability of a flight offer.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  data: "{{tools.flightOffer}}"
+
+  exposes:
+    - type: rest
+      port: 8107
+      namespace: flight-price-api
+      resources:
+        - path: /v1/flights/price
+          name: flight-price
+          description: Flight offer price confirmation.
+          operations:
+            - method: POST
+              name: confirm-flight-price
+              description: Confirm current pricing for a flight offer.
+              call: "flight-offers-price.confirm-flight-price"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9107
+      namespace: flight-price-mcp
+      transport: http
+      tools:
+        - name: confirm-flight-price
+          description: Confirm the current price and availability of a selected flight offer before booking.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "flight-offers-price.confirm-flight-price"
+          outputParameters:
+            - type: object
+              mapping: "$."

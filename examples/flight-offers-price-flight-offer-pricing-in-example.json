@@ -1,0 +1,16 @@
+{
+  "type": "flight-offer-pricing",
+  "flightOffers": [
+    "sample-value"
+  ],
+  "payments": [
+    {
+      "brand": "sample-value",
+      "binNumber": 123456,
+      "flightOfferIds": "1"
+    }
+  ],
+  "travelers": [
+    "sample-value"
+  ]
+}

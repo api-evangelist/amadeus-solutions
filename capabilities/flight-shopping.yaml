@@ -1,0 +1,103 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amadeus Flight Shopping
+  description: >-
+    Unified workflow capability for complete flight shopping encompassing
+    search, pricing, upsell, and seat selection. Used by OTA developers,
+    airline retailing platforms, and travel chatbots to build end-to-end
+    flight shopping experiences.
+  tags:
+    - Amadeus
+    - Flights
+    - Shopping
+    - Search
+    - Pricing
+    - Travel
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMADEUS_BEARER_TOKEN: AMADEUS_BEARER_TOKEN
+
+capability:
+  consumes:
+    - import: flight-offers-search
+      location: ./shared/flight-offers-search.yaml
+    - import: flight-offers-price
+      location: ./shared/flight-offers-price.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: flight-shopping-api
+      description: Unified REST API for flight search, pricing, and ancillary selection.
+      resources:
+        - path: /v1/flights/search
+          name: flight-search
+          description: Search for available flight offers.
+          operations:
+            - method: GET
+              name: search-flights
+              description: Search available flights by origin, destination, and date.
+              call: "flight-offers-search.get-flight-offers"
+              with:
+                originLocationCode: "rest.origin"
+                destinationLocationCode: "rest.destination"
+                departureDate: "rest.departureDate"
+                adults: "rest.adults"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/flights/price
+          name: flight-price
+          description: Confirm pricing for a selected flight offer.
+          operations:
+            - method: POST
+              name: confirm-price
+              description: Confirm current price and availability.
+              call: "flight-offers-price.confirm-flight-price"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: flight-shopping-mcp
+      transport: http
+      description: MCP server for AI-assisted flight shopping and booking preparation.
+      tools:
+        - name: search-flights
+          description: Search for available flights between two airports on a given date, with options for cabin class and passenger count.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "flight-offers-search.get-flight-offers"
+          with:
+            originLocationCode: "tools.origin"
+            destinationLocationCode: "tools.destination"
+            departureDate: "tools.departureDate"
+            adults: "tools.adults"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: search-flights-advanced
+          description: Advanced flight search with complex criteria using request body for multi-city and detailed filters.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "flight-offers-search.search-flight-offers"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: confirm-flight-price
+          description: Confirm the current price and availability of a selected flight offer before creating a booking.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "flight-offers-price.confirm-flight-price"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,8 @@
+{
+  "name": "John Smith",
+  "price": "299.99",
+  "bookableByTraveler": true,
+  "bookableByItinerary": false,
+  "segmentIds": "1",
+  "travelerIds": "1"
+}

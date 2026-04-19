@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/seat-map-display-aircraft-cabin-amenities_-wifi-schema.json",
+  "title": "AircraftCabinAmenities_Wifi",
+  "description": "AircraftCabinAmenities_Wifi schema",
+  "allOf": [
+    {
+      "$ref": "#/definitions/Amenity"
+    },
+    {
+      "type": "object",
+      "description": "Level of area coverage for a given flight",
+      "properties": {
+        "wifiCoverage": {
+          "type": "string",
+          "enum": [
+            "FULL",
+            "PARTIAL"
+          ]
+        }
+      }
+    }
+  ]
+}

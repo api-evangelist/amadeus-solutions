@@ -1,0 +1,11 @@
+{
+  "cabin": "ECO",
+  "number": "12B",
+  "characteristicsCodes": [
+    "AA123"
+  ],
+  "travelerPricing": [
+    "sample-value"
+  ],
+  "coordinates": "sample-value"
+}

@@ -1,0 +1,13 @@
+{
+  "category": "PERSONAL",
+  "lines": [
+    "sample-value"
+  ],
+  "postalCode": "AA123",
+  "countryCode": "AA123",
+  "cityName": "John Smith",
+  "stateCode": "AA123",
+  "stateName": "John Smith",
+  "postalBox": "sample-value",
+  "text": "sample-value"
+}

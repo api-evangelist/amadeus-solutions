@@ -1,0 +1,13 @@
+{
+  "currencyCode": "EUR",
+  "originDestinations": [
+    "sample-value"
+  ],
+  "travelers": [
+    "sample-value"
+  ],
+  "sources": [
+    "sample-value"
+  ],
+  "searchCriteria": "sample-value"
+}

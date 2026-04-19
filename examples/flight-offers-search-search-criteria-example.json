@@ -1,0 +1,14 @@
+{
+  "excludeAllotments": false,
+  "addOneWayOffers": true,
+  "maxFlightOffers": 250,
+  "maxPrice": 100,
+  "allowAlternativeFareOptions": true,
+  "oneFlightOfferPerDay": true,
+  "additionalInformation": {
+    "chargeableCheckedBags": true,
+    "brandedFares": true
+  },
+  "pricingOptions": "sample-value",
+  "flightFilters": "sample-value"
+}

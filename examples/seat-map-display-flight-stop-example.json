@@ -1,0 +1,7 @@
+{
+  "iataCode": "JFK",
+  "newAircraft": "sample-value",
+  "duration": "PT2H10M",
+  "arrivalAt": "2017-10-23T20:00:00+02:00",
+  "departureAt": "2017-10-23T20:00:00+02:00"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/seat-map-display-coordinates-structure.json",
+  "name": "Coordinates",
+  "description": "Coordinates schema",
+  "type": "object",
+  "properties": {
+    "x": {
+      "type": "int32",
+      "description": "coordinate for the Length"
+    },
+    "y": {
+      "type": "int32",
+      "description": "coordinate for the Width"
+    }
+  }
+}

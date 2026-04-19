@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-get-flight-offers-query-schema.json",
+  "title": "GetFlightOffersQuery",
+  "description": "GetFlightOffersQuery schema",
+  "properties": {
+    "currencyCode": {
+      "type": "string",
+      "description": "The currency code, as defined in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217), to reflect the currency in which this amount is expressed.",
+      "example": "EUR"
+    },
+    "originDestinations": {
+      "title": "originDestinations",
+      "description": "Origins and Destinations must be properly ordered in time (chronological order in accordance with the timezone of each location) to describe the journey consistently. Dates and times must not be past nor more than 365 days in the future, according to provider settings.Number of Origins and Destinations must not exceed the limit defined in provider settings.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/definitions/OriginDestination"
+      }
+    },
+    "travelers": {
+      "title": "travelers",
+      "description": "travelers in the trip. \n\n Maximum number of passengers older than 2 yo (CHILD, ADULT, YOUGHT): 9.\n Each adult can travel with one INFANT so maximum total number of passengers: 18",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 18,
+      "items": {
+        "$ref": "#/definitions/Extended_TravelerInfo"
+      }
+    },
+    "sources": {
+      "title": "sources",
+      "description": "Allows enable one or more sources. If present in the list, these sources will be called by the system.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/FlightOfferSource"
+      }
+    },
+    "searchCriteria": {
+      "$ref": "#/definitions/SearchCriteria"
+    }
+  },
+  "required": [
+    "originDestinations",
+    "travelers",
+    "sources"
+  ],
+  "example": {
+    "currencyCode": "USD",
+    "originDestinations": [
+      {
+        "id": "1",
+        "originLocationCode": "NYC",
+        "destinationLocationCode": "MAD",
+        "departureDateTimeRange": {
+          "date": "2023-11-01",
+          "time": "10:00:00"
+        }
+      }
+    ],
+    "travelers": [
+      {
+        "id": "1",
+        "travelerType": "ADULT"
+      }
+    ],
+    "sources": [
+      "GDS"
+    ],
+    "searchCriteria": {
+      "maxFlightOffers": 2,
+      "flightFilters": {
+        "cabinRestrictions": [
+          {
+            "cabin": "BUSINESS",
+            "coverage": "MOST_SEGMENTS",
+            "originDestinationIds": [
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/seat-map-display-address-schema.json",
+  "title": "Address",
+  "description": "address information",
+  "type": "object",
+  "properties": {
+    "category": {
+      "description": "Category of the contact element",
+      "type": "string",
+      "enum": [
+        "BUSINESS",
+        "PERSONAL",
+        "OTHER"
+      ]
+    },
+    "lines": {
+      "type": "array",
+      "description": "Line 1 = Street address, Line 2 = Apartment, suite, unit, building, floor, etc",
+      "items": {
+        "type": "string"
+      }
+    },
+    "postalCode": {
+      "type": "string",
+      "description": "Example: 74130"
+    },
+    "countryCode": {
+      "type": "string",
+      "description": "country code [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)",
+      "pattern": "[a-zA-Z]{2}"
+    },
+    "cityName": {
+      "type": "string",
+      "description": "Full city name. Example: Dublin",
+      "pattern": "[a-zA-Z -]{1,35}"
+    },
+    "stateCode": {
+      "type": "string",
+      "description": "State code - two character standard [ISO 3166-2 state code](https://en.wikipedia.org/wiki/ISO_3166-2)",
+      "pattern": "[a-zA-Z0-9]{1,2}"
+    },
+    "stateName": {
+      "type": "string",
+      "description": "Full state name"
+    },
+    "postalBox": {
+      "type": "string",
+      "description": "E.g. BP 220"
+    },
+    "text": {
+      "type": "string",
+      "description": "Field containing a full unformatted address. Only applicable when the fields lines, postalCode, countryCode, cityName are not filled."
+    }
+  }
+}

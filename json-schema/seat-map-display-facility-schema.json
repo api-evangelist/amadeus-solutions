@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/seat-map-display-facility-schema.json",
+  "title": "Facility",
+  "description": "Facility schema",
+  "type": "object",
+  "properties": {
+    "code": {
+      "description": "Facility code, as described in the facility dictionary",
+      "type": "string"
+    },
+    "column": {
+      "type": "string"
+    },
+    "row": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string",
+      "description": "Position is either front, rear or seat (in case the facility takes the place of a seat)",
+      "enum": [
+        "FRONT",
+        "REAR",
+        "SEAT"
+      ]
+    },
+    "coordinates": {
+      "$ref": "#/definitions/Coordinates"
+    }
+  }
+}

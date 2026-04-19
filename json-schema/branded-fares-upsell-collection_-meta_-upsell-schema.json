@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/branded-fares-upsell-collection_-meta_-upsell-schema.json",
+  "title": "Collection_Meta_Upsell",
+  "description": "Collection_Meta_Upsell schema",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "example": 1
+    },
+    "oneWayUpselledCombinations": {
+      "type": "array",
+      "items": {
+        "title": "oneWayUpselledCombinations",
+        "properties": {
+          "flightOfferId": {
+            "type": "string"
+          },
+          "upselledFlightOfferIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "type": "object"
+}

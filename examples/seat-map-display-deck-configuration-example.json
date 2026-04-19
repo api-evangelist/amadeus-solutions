@@ -1,0 +1,13 @@
+{
+  "width": 80,
+  "length": 65,
+  "startSeatRow": 11,
+  "endSeatRow": 84,
+  "startWingsX": 33,
+  "endWingsX": 92,
+  "startWingsRow": 45,
+  "endWingsRow": 73,
+  "exitRowsX": [
+    0
+  ]
+}

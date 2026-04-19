@@ -1,0 +1,10 @@
+{
+  "power": "sample-value",
+  "seat": "sample-value",
+  "wifi": "sample-value",
+  "entertainment": [
+    "sample-value"
+  ],
+  "food": "sample-value",
+  "beverage": "sample-value"
+}

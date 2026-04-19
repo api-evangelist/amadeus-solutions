@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/branded-fares-upsell-payment-schema.json",
+  "title": "Payment",
+  "description": "Payment schema",
+  "type": "object",
+  "properties": {
+    "brand": {
+      "$ref": "#/definitions/PaymentBrand"
+    },
+    "binNumber": {
+      "description": "The first 6 digits of the credit card",
+      "type": "integer",
+      "example": 123456,
+      "pattern": "[0-9]{6}"
+    },
+    "flightOfferIds": {
+      "description": "Id of the flightOffers to pay",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "string"
+      },
+      "example": "1"
+    }
+  }
+}

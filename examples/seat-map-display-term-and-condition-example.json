@@ -1,0 +1,9 @@
+{
+  "category": "EXCHANGE",
+  "circumstances": "sample-value",
+  "notApplicable": true,
+  "maxPenaltyAmount": "299.99",
+  "descriptions": [
+    "sample-value"
+  ]
+}

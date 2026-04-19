@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/seat-map-display-fare-rules-structure.json",
+  "name": "FareRules",
+  "description": "FareRules schema",
+  "type": "object",
+  "properties": {
+    "currency": {
+      "type": "string",
+      "description": "The currency of the penalties"
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/TermAndCondition"
+      }
+    }
+  }
+}

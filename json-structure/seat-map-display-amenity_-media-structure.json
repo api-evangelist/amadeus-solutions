@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/seat-map-display-amenity_-media-structure.json",
+  "name": "Amenity_Media",
+  "description": "Media is a digital content like image, video with associated text and description, several scales and some metadata can be provided also.",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "media title",
+      "example": "My image title"
+    },
+    "href": {
+      "type": "uri",
+      "example": "http://pdt.multimediarepository.testing.amadeus.com/cmr/retrieve/hotel/69810B23CB8644A18AF760DC66BE41A6",
+      "description": "href to display the original media.\n"
+    },
+    "description": {
+      "$ref": "#/definitions/QualifiedFreeText"
+    },
+    "mediaType": {
+      "type": "string",
+      "description": "media type as per IANA (https://www.iana.org/assignments/media-types/media-types.xhtml)",
+      "enum": [
+        "application",
+        "audio",
+        "font",
+        "example",
+        "image",
+        "message",
+        "model",
+        "multipart",
+        "text",
+        "video"
+      ],
+      "example": "image"
+    }
+  }
+}

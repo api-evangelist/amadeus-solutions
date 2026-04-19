@@ -1,0 +1,11 @@
+{
+  "category": "OTHER",
+  "addresseeName": "John Smith",
+  "deviceType": "STANDARD",
+  "countryCode": "AA123",
+  "countryCallingCode": "AA123",
+  "areaCode": "AA123",
+  "number": "sample-value",
+  "extension": "sample-value",
+  "text": "sample-value"
+}

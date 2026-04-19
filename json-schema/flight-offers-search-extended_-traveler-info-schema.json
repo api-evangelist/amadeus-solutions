@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-extended_-traveler-info-schema.json",
+  "title": "Extended_TravelerInfo",
+  "description": "Extended_TravelerInfo schema",
+  "required": [
+    "id",
+    "travelerType"
+  ],
+  "allOf": [
+    {
+      "$ref": "#/definitions/TravelerInfo"
+    }
+  ]
+}

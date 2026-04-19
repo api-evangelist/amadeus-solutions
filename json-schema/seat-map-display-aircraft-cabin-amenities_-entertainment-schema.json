@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/seat-map-display-aircraft-cabin-amenities_-entertainment-schema.json",
+  "title": "AircraftCabinAmenities_Entertainment",
+  "description": "AircraftCabinAmenities_Entertainment schema",
+  "allOf": [
+    {
+      "$ref": "#/definitions/Amenity"
+    },
+    {
+      "type": "object",
+      "description": "Type of entertainment contents for a given flight",
+      "properties": {
+        "entertainmentType": {
+          "type": "string",
+          "enum": [
+            "LIVE_TV",
+            "MOVIES",
+            "AUDIO_VIDEO_ON_DEMAND",
+            "TV_SHOWS",
+            "IP_TV"
+          ]
+        }
+      }
+    }
+  ]
+}

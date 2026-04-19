@@ -1,0 +1,130 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amadeus Flight Offers Search API
+  description: Shared capability for searching and comparing flight offers across 400+ airlines.
+  tags:
+    - Amadeus
+    - Flights
+    - Search
+    - Travel
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMADEUS_BEARER_TOKEN: AMADEUS_BEARER_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: flight-offers-search
+      baseUri: https://test.api.amadeus.com/v2
+      description: Amadeus Flight Offers Search API.
+      authentication:
+        type: bearer
+        token: "{{AMADEUS_BEARER_TOKEN}}"
+      resources:
+        - name: shopping-flight-offers
+          path: /shopping/flight-offers
+          description: Search for flight offers.
+          operations:
+            - name: get-flight-offers
+              method: GET
+              description: Search for flight offers by origin, destination, and date.
+              inputParameters:
+                - name: originLocationCode
+                  in: query
+                  type: string
+                  required: true
+                  description: IATA code of the departure airport.
+                - name: destinationLocationCode
+                  in: query
+                  type: string
+                  required: true
+                  description: IATA code of the arrival airport.
+                - name: departureDate
+                  in: query
+                  type: string
+                  required: true
+                  description: Departure date in ISO 8601 format (YYYY-MM-DD).
+                - name: adults
+                  in: query
+                  type: integer
+                  required: true
+                  description: Number of adult travelers.
+                - name: returnDate
+                  in: query
+                  type: string
+                  required: false
+                  description: Return date for round trips (YYYY-MM-DD).
+                - name: travelClass
+                  in: query
+                  type: string
+                  required: false
+                  description: Cabin class (ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST).
+                - name: max
+                  in: query
+                  type: integer
+                  required: false
+                  description: Maximum number of results to return.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: search-flight-offers
+              method: POST
+              description: Advanced flight offer search using request body.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  currencyCode: "{{tools.currencyCode}}"
+
+  exposes:
+    - type: rest
+      port: 8106
+      namespace: flight-search-api
+      resources:
+        - path: /v1/flights/search
+          name: flight-search
+          description: Flight offer search.
+          operations:
+            - method: GET
+              name: get-flight-offers
+              description: Search for available flights.
+              call: "flight-offers-search.get-flight-offers"
+              with:
+                originLocationCode: "rest.origin"
+                destinationLocationCode: "rest.destination"
+                departureDate: "rest.departureDate"
+                adults: "rest.adults"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9106
+      namespace: flight-search-mcp
+      transport: http
+      tools:
+        - name: search-flights
+          description: Search for available flights between two airports on a given date.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "flight-offers-search.get-flight-offers"
+          with:
+            originLocationCode: "tools.origin"
+            destinationLocationCode: "tools.destination"
+            departureDate: "tools.departureDate"
+            adults: "tools.adults"
+          outputParameters:
+            - type: object
+              mapping: "$."

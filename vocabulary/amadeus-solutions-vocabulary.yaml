@@ -1,0 +1,230 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amadeus Solutions
+  description: >-
+    Vocabulary capturing the taxonomy of the Amadeus Solutions API surface
+    covering flight search, pricing, upsell, and ancillary services along with
+    capability workflows for travel technology platforms.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: flight-offers-search
+      name: Flight Offers Search API
+      version: "2.0.0"
+      baseUrl: https://test.api.amadeus.com/v2
+      status: active
+    - namespace: flight-offers-price
+      name: Flight Offers Price API
+      version: "1.0.0"
+      baseUrl: https://test.api.amadeus.com/v1
+      status: active
+    - namespace: branded-fares-upsell
+      name: Branded Fares Upsell API
+      version: "1.0.0"
+      baseUrl: https://test.api.amadeus.com/v1
+      status: active
+    - namespace: seat-map-display
+      name: Seat Map Display API
+      version: "1.0.0"
+      baseUrl: https://test.api.amadeus.com/v1
+      status: active
+
+  resources:
+    - name: flight-offers
+      description: Available flight itineraries with pricing.
+      apis:
+        - flight-offers-search
+      actions:
+        - search
+        - search-advanced
+    - name: flight-pricing
+      description: Current price confirmation for flight offers.
+      apis:
+        - flight-offers-price
+      actions:
+        - confirm
+    - name: branded-fares
+      description: Airline branded fare families with upgrade options.
+      apis:
+        - branded-fares-upsell
+      actions:
+        - get-upsell-options
+    - name: seat-maps
+      description: Aircraft cabin layout and seat availability.
+      apis:
+        - seat-map-display
+      actions:
+        - get
+
+  actions:
+    - name: search
+      description: Search for available flight offers.
+      httpMethod: GET
+      pattern: query
+    - name: search-advanced
+      description: Advanced flight search with complex criteria.
+      httpMethod: POST
+      pattern: query
+    - name: confirm
+      description: Confirm pricing for a selected offer.
+      httpMethod: POST
+      pattern: read
+    - name: get-upsell-options
+      description: Retrieve upgrade options for a flight offer.
+      httpMethod: POST
+      pattern: read
+    - name: get
+      description: Retrieve seat map for a flight.
+      httpMethod: GET
+      pattern: read
+
+  schemas:
+    core:
+      - name: FlightOffer
+        description: Available flight itinerary with fare details.
+        keyProperties:
+          - id
+          - source
+          - price
+          - itineraries
+      - name: Price
+        description: Fare price breakdown.
+        keyProperties:
+          - currency
+          - total
+          - base
+      - name: Itinerary
+        description: Flight segments forming a complete journey.
+        keyProperties:
+          - duration
+          - segments
+    ancillaries:
+      - name: SeatMap
+        description: Aircraft cabin layout with available seats.
+        keyProperties:
+          - decks
+          - aircraft
+      - name: BrandedFare
+        description: Airline fare family with included services.
+        keyProperties:
+          - brandedFare
+          - brandedFareLabel
+
+  parameters:
+    search:
+      - name: originLocationCode
+        description: IATA code of departure airport.
+      - name: destinationLocationCode
+        description: IATA code of arrival airport.
+      - name: departureDate
+        description: Departure date (YYYY-MM-DD).
+      - name: returnDate
+        description: Return date for round trips (YYYY-MM-DD).
+      - name: adults
+        description: Number of adult travelers.
+      - name: travelClass
+        description: Cabin class (ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST).
+      - name: max
+        description: Maximum results to return.
+
+  enums:
+    cabinClass:
+      - ECONOMY
+      - PREMIUM_ECONOMY
+      - BUSINESS
+      - FIRST
+    travelerType:
+      - ADULT
+      - CHILD
+      - SEATED_INFANT
+    seatCharacteristic:
+      - WINDOW
+      - AISLE
+      - MIDDLE
+      - EXTRA_LEGROOM
+      - BULKHEAD
+
+  authentication:
+    schemes:
+      - type: bearer
+        description: OAuth2 Bearer token from Amadeus Authorization API.
+        tokenEndpoint: https://test.api.amadeus.com/v1/security/oauth2/token
+
+capability:
+  workflows:
+    - name: Flight Shopping
+      file: capabilities/flight-shopping.yaml
+      description: >-
+        Complete flight shopping flow from search through price confirmation.
+      apisComined:
+        - Flight Offers Search API
+        - Flight Offers Price API
+      toolCount: 3
+      personas:
+        - OTA Developer
+        - Travel Chatbot Developer
+
+  personas:
+    - id: ota-developer
+      name: OTA Developer
+      description: Developer building online travel agency flight search and booking flows.
+      workflows:
+        - Flight Shopping
+    - id: travel-chatbot-developer
+      name: Travel Chatbot Developer
+      description: Developer building conversational travel assistants for flight search.
+      workflows:
+        - Flight Shopping
+
+  domains:
+    - name: Flight Search
+      description: Flight offer discovery and comparison.
+      resources:
+        - flight-offers
+    - name: Flight Pricing
+      description: Price confirmation and validation before booking.
+      resources:
+        - flight-pricing
+    - name: Ancillaries
+      description: Upsell, seat selection, and add-on services.
+      resources:
+        - branded-fares
+        - seat-maps
+
+  namespaces:
+    consumed:
+      - flight-offers-search
+      - flight-offers-price
+    rest:
+      - flight-shopping-api (port 8080)
+      - flight-search-api (port 8106)
+      - flight-price-api (port 8107)
+    mcp:
+      - flight-shopping-mcp (port 9090)
+      - flight-search-mcp (port 9106)
+      - flight-price-mcp (port 9107)
+
+  binds:
+    - AMADEUS_BEARER_TOKEN
+
+crossReference:
+  - resource: flight-offers
+    operations:
+      - search
+      - search-advanced
+    workflows:
+      - Flight Shopping
+    personas:
+      - OTA Developer
+      - Travel Chatbot Developer
+  - resource: flight-pricing
+    operations:
+      - confirm
+    workflows:
+      - Flight Shopping
+    personas:
+      - OTA Developer
+      - Travel Chatbot Developer

@@ -1,0 +1,18 @@
+{
+  "type": "flight-offer-pricing",
+  "flightOffers": [
+    "sample-value"
+  ],
+  "bookingRequirements": {
+    "invoiceAddressRequired": true,
+    "mailingAddressRequired": true,
+    "emailAddressRequired": true,
+    "phoneCountryCodeRequired": true,
+    "mobilePhoneNumberRequired": true,
+    "phoneNumberRequired": true,
+    "postalCodeRequired": true,
+    "travelerRequirements": [
+      "sample-value"
+    ]
+  }
+}

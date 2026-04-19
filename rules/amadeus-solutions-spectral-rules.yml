@@ -1,0 +1,109 @@
+rules:
+  info-title-required:
+    description: API title must be present.
+    severity: error
+    given: $.info
+    then:
+      field: title
+      function: truthy
+  info-description-required:
+    description: API must have a description.
+    severity: error
+    given: $.info
+    then:
+      field: description
+      function: truthy
+  info-version-required:
+    description: API version must be present.
+    severity: error
+    given: $.info
+    then:
+      field: version
+      function: truthy
+  servers-https:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+  operation-summary-required:
+    description: Every operation must have a summary.
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: summary
+      function: truthy
+  operation-summary-amadeus-prefix:
+    description: Operation summaries must start with "Amadeus".
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Amadeus "
+  operation-id-required:
+    description: Every operation must have an operationId.
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: truthy
+  operation-tags-required:
+    description: Every operation must have at least one tag.
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: tags
+      function: truthy
+  parameter-description-required:
+    description: Every parameter must have a description.
+    severity: warn
+    given: $.paths[*][*].parameters[*]
+    then:
+      field: description
+      function: truthy
+  response-description-required:
+    description: Every response must have a description.
+    severity: error
+    given: $.paths[*][*].responses[*]
+    then:
+      field: description
+      function: truthy
+  response-401-required:
+    description: Operations should define a 401 response.
+    severity: warn
+    given: $.paths[*][get,post].responses
+    then:
+      field: '401'
+      function: truthy
+  get-no-request-body:
+    description: GET operations must not have a request body.
+    severity: error
+    given: $.paths[*].get
+    then:
+      field: requestBody
+      function: falsy
+  schema-description:
+    description: Top-level schemas should have descriptions.
+    severity: info
+    given: $.components.schemas[*]
+    then:
+      field: description
+      function: truthy
+  security-schemes-defined:
+    description: Security schemes should be defined.
+    severity: warn
+    given: $.components
+    then:
+      field: securitySchemes
+      function: truthy
+  paths-no-trailing-slash:
+    description: Paths must not have trailing slashes.
+    severity: error
+    given: $.paths
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "/$"

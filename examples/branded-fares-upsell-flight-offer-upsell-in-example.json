@@ -1,0 +1,9 @@
+{
+  "type": "flight-offer-upsell",
+  "flightOffers": [
+    "sample-value"
+  ],
+  "payments": [
+    "sample-value"
+  ]
+}

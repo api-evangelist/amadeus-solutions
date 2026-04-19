@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/seat-map-display-aircraft-cabin-amenities_-beverage-structure.json",
+  "name": "AircraftCabinAmenities_Beverage",
+  "description": "AircraftCabinAmenities_Beverage schema",
+  "allOf": [
+    {
+      "$ref": "#/definitions/Amenity"
+    },
+    {
+      "type": "object",
+      "description": "Type of beverage for a given flight",
+      "properties": {
+        "beverageType": {
+          "type": "string",
+          "enum": [
+            "ALCOHOLIC",
+            "NON_ALCOHOLIC",
+            "ALCOHOLIC_AND_NON_ALCOHOLIC"
+          ]
+        }
+      }
+    }
+  ]
+}

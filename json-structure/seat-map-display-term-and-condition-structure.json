@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/seat-map-display-term-and-condition-structure.json",
+  "name": "TermAndCondition",
+  "description": "TermAndCondition schema",
+  "properties": {
+    "category": {
+      "type": "string",
+      "description": "This defines what type of modification is concerned in this rule.",
+      "enum": [
+        "REFUND",
+        "EXCHANGE",
+        "REVALIDATION",
+        "REISSUE",
+        "REBOOK",
+        "CANCELLATION"
+      ],
+      "example": "EXCHANGE"
+    },
+    "circumstances": {
+      "type": "string"
+    },
+    "notApplicable": {
+      "type": "boolean"
+    },
+    "maxPenaltyAmount": {
+      "type": "string"
+    },
+    "descriptions": {
+      "type": "array",
+      "items": {
+        "name": "Description",
+        "properties": {
+          "descriptionType": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "type": "object"
+}

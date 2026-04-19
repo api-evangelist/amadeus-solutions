@@ -1,0 +1,10 @@
+{
+  "deckType": "UPPER",
+  "deckConfiguration": "sample-value",
+  "facilities": [
+    "sample-value"
+  ],
+  "seats": [
+    "sample-value"
+  ]
+}

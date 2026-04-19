@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/flight-offers-search-cabin-restriction-structure.json",
+  "name": "CabinRestriction",
+  "description": "CabinRestriction schema",
+  "type": "object",
+  "properties": {
+    "cabin": {
+      "$ref": "#/definitions/TravelClass"
+    },
+    "originDestinationIds": {
+      "name": "originDestinationIds",
+      "description": "The list of originDestination identifiers for which the cabinRestriction applies",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        1,
+        2
+      ]
+    }
+  }
+}

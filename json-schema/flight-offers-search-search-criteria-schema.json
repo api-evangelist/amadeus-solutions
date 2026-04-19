@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-search-criteria-schema.json",
+  "title": "SearchCriteria",
+  "description": "SearchCriteria schema",
+  "type": "object",
+  "properties": {
+    "excludeAllotments": {
+      "description": "This option allows to exclude the isAllotment flag associated to a booking class in the search response when it exist.",
+      "type": "boolean",
+      "example": false
+    },
+    "addOneWayOffers": {
+      "description": "This option allows activate the one-way combinable feature",
+      "type": "boolean",
+      "example": true
+    },
+    "maxFlightOffers": {
+      "description": "Maximum number of flight offers returned (Max 250)",
+      "type": "number",
+      "default": 250,
+      "example": 250
+    },
+    "maxPrice": {
+      "description": "maximum price per traveler. By default, no limit is applied. If specified, the value should be a positive number with no decimals",
+      "type": "integer",
+      "example": 100
+    },
+    "allowAlternativeFareOptions": {
+      "description": "This option allows to default to a standard fareOption if no offers are found for the selected fareOption.",
+      "type": "boolean",
+      "example": true
+    },
+    "oneFlightOfferPerDay": {
+      "description": "Requests the system to find at least one flight-offer per day, if possible, when a range of dates is specified. Default is false.",
+      "type": "boolean",
+      "example": true
+    },
+    "additionalInformation": {
+      "title": "AdditionalInformation",
+      "type": "object",
+      "properties": {
+        "chargeableCheckedBags": {
+          "description": "If true, returns the price of the first additional bag when the airline is an \"Amadeus Ancillary Services\" member.",
+          "type": "boolean",
+          "example": true
+        },
+        "brandedFares": {
+          "description": "If true, returns the fare family name for each flight-offer which supports fare family",
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "pricingOptions": {
+      "$ref": "#/definitions/Extended_PricingOptions"
+    },
+    "flightFilters": {
+      "title": "FlightFilters",
+      "$ref": "#/definitions/FlightFilters"
+    }
+  }
+}

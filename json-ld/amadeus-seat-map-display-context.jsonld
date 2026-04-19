@@ -1,0 +1,622 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amadeus": "https://amadeus.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "OperatingFlight": "amadeus:OperatingFlight",
+    "FlightOffer": "amadeus:FlightOffer",
+    "Document": "amadeus:Document",
+    "Collection_Meta": "amadeus:Collection_Meta",
+    "AircraftCabinAmenities": "amadeus:AircraftCabinAmenities",
+    "BaseName": "amadeus:BaseName",
+    "LoyaltyProgram": "amadeus:LoyaltyProgram",
+    "Error_400": "amadeus:Error_400",
+    "ElementaryPrice": "amadeus:ElementaryPrice",
+    "LocationValue": "amadeus:LocationValue",
+    "Price": "amadeus:Price",
+    "FlightEndPoint": "amadeus:FlightEndPoint",
+    "SeatmapTravelerPricing": "amadeus:SeatmapTravelerPricing",
+    "EmergencyContact": "amadeus:EmergencyContact",
+    "Address": "amadeus:Address",
+    "Phone": "amadeus:Phone",
+    "Link": "amadeus:Link",
+    "FlightSegment": "amadeus:FlightSegment",
+    "Coordinates": "amadeus:Coordinates",
+    "Discount": "amadeus:Discount",
+    "FareRules": "amadeus:FareRules",
+    "SeatCharacteristicDictionary": "amadeus:SeatCharacteristicDictionary",
+    "Deck": "amadeus:Deck",
+    "Fee": "amadeus:Fee",
+    "Amenity": "amadeus:Amenity",
+    "Issue": "amadeus:Issue",
+    "FlightStop": "amadeus:FlightStop",
+    "TermAndCondition": "amadeus:TermAndCondition",
+    "QualifiedFreeText": "amadeus:QualifiedFreeText",
+    "Error_404": "amadeus:Error_404",
+    "Tax": "amadeus:Tax",
+    "Amenity_Seat": "amadeus:Amenity_Seat",
+    "Stakeholder": "amadeus:Stakeholder",
+    "ContactDictionary": "amadeus:ContactDictionary",
+    "Co2Emission": "amadeus:Co2Emission",
+    "AircraftEquipment": "amadeus:AircraftEquipment",
+    "Error_500": "amadeus:Error_500",
+    "Facility": "amadeus:Facility",
+    "Extended_Price": "amadeus:Extended_Price",
+    "DeckConfiguration": "amadeus:DeckConfiguration",
+    "Seat": "amadeus:Seat",
+    "SeatMap": "amadeus:SeatMap",
+    "Amenity_Media": "amadeus:Amenity_Media",
+    "FacilityDictionary": "amadeus:FacilityDictionary",
+    "AvailableSeatsCounter": "amadeus:AvailableSeatsCounter",
+    "BaggageAllowance": "amadeus:BaggageAllowance",
+    "carrierCode": {
+      "@id": "amadeus:carrierCode",
+      "@type": "xsd:string"
+    },
+    "number": {
+      "@id": "amadeus:number",
+      "@type": "xsd:string"
+    },
+    "suffix": {
+      "@id": "amadeus:suffix",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amadeus:type",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "amadeus:id",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "amadeus:source",
+      "@type": "xsd:string"
+    },
+    "instantTicketingRequired": {
+      "@id": "amadeus:instantTicketingRequired",
+      "@type": "xsd:boolean"
+    },
+    "disablePricing": {
+      "@id": "amadeus:disablePricing",
+      "@type": "xsd:boolean"
+    },
+    "nonHomogeneous": {
+      "@id": "amadeus:nonHomogeneous",
+      "@type": "xsd:boolean"
+    },
+    "oneWay": {
+      "@id": "amadeus:oneWay",
+      "@type": "xsd:boolean"
+    },
+    "paymentCardRequired": {
+      "@id": "amadeus:paymentCardRequired",
+      "@type": "xsd:boolean"
+    },
+    "lastTicketingDate": {
+      "@id": "amadeus:lastTicketingDate",
+      "@type": "xsd:string"
+    },
+    "numberOfBookableSeats": {
+      "@id": "amadeus:numberOfBookableSeats",
+      "@type": "xsd:decimal"
+    },
+    "itineraries": {
+      "@id": "amadeus:itineraries",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "price": {
+      "@id": "amadeus:price",
+      "@type": "xsd:string"
+    },
+    "pricingOptions": {
+      "@id": "amadeus:pricingOptions",
+      "@type": "xsd:string"
+    },
+    "validatingAirlineCodes": {
+      "@id": "amadeus:validatingAirlineCodes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "travelerPricings": {
+      "@id": "amadeus:travelerPricings",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "fareRules": {
+      "@id": "amadeus:fareRules",
+      "@type": "xsd:string"
+    },
+    "issuanceDate": {
+      "@id": "amadeus:issuanceDate",
+      "@type": "xsd:date"
+    },
+    "expiryDate": {
+      "@id": "amadeus:expiryDate",
+      "@type": "xsd:date"
+    },
+    "issuanceCountry": {
+      "@id": "amadeus:issuanceCountry",
+      "@type": "xsd:string"
+    },
+    "issuanceLocation": {
+      "@id": "amadeus:issuanceLocation",
+      "@type": "xsd:string"
+    },
+    "nationality": {
+      "@id": "amadeus:nationality",
+      "@type": "xsd:string"
+    },
+    "birthPlace": {
+      "@id": "amadeus:birthPlace",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "amadeus:count",
+      "@type": "xsd:integer"
+    },
+    "links": {
+      "@id": "amadeus:links",
+      "@type": "xsd:string"
+    },
+    "power": {
+      "@id": "amadeus:power",
+      "@type": "xsd:string"
+    },
+    "seat": {
+      "@id": "amadeus:seat",
+      "@type": "xsd:string"
+    },
+    "wifi": {
+      "@id": "amadeus:wifi",
+      "@type": "xsd:string"
+    },
+    "entertainment": {
+      "@id": "amadeus:entertainment",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "food": {
+      "@id": "amadeus:food",
+      "@type": "xsd:string"
+    },
+    "beverage": {
+      "@id": "amadeus:beverage",
+      "@type": "xsd:string"
+    },
+    "firstName": {
+      "@id": "amadeus:firstName",
+      "@type": "xsd:string"
+    },
+    "lastName": {
+      "@id": "amadeus:lastName",
+      "@type": "xsd:string"
+    },
+    "middleName": {
+      "@id": "amadeus:middleName",
+      "@type": "xsd:string"
+    },
+    "programOwner": {
+      "@id": "amadeus:programOwner",
+      "@type": "xsd:string"
+    },
+    "errors": {
+      "@id": "amadeus:errors",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "amount": {
+      "@id": "amadeus:amount",
+      "@type": "xsd:string"
+    },
+    "currencyCode": {
+      "@id": "amadeus:currencyCode",
+      "@type": "xsd:string"
+    },
+    "cityCode": {
+      "@id": "amadeus:cityCode",
+      "@type": "xsd:string"
+    },
+    "countryCode": {
+      "@id": "amadeus:countryCode",
+      "@type": "xsd:string"
+    },
+    "currency": {
+      "@id": "amadeus:currency",
+      "@type": "xsd:string"
+    },
+    "total": {
+      "@id": "amadeus:total",
+      "@type": "xsd:string"
+    },
+    "base": {
+      "@id": "amadeus:base",
+      "@type": "xsd:string"
+    },
+    "fees": {
+      "@id": "amadeus:fees",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "taxes": {
+      "@id": "amadeus:taxes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "iataCode": {
+      "@id": "amadeus:iataCode",
+      "@type": "xsd:string"
+    },
+    "terminal": {
+      "@id": "amadeus:terminal",
+      "@type": "xsd:string"
+    },
+    "at": {
+      "@id": "amadeus:at",
+      "@type": "xsd:dateTime"
+    },
+    "travelerId": {
+      "@id": "amadeus:travelerId",
+      "@type": "xsd:string"
+    },
+    "seatAvailabilityStatus": {
+      "@id": "amadeus:seatAvailabilityStatus",
+      "@type": "xsd:string"
+    },
+    "addresseeName": {
+      "@id": "amadeus:addresseeName",
+      "@type": "xsd:string"
+    },
+    "text": {
+      "@id": "amadeus:text",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "amadeus:category",
+      "@type": "xsd:string"
+    },
+    "lines": {
+      "@id": "amadeus:lines",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "postalCode": {
+      "@id": "amadeus:postalCode",
+      "@type": "xsd:string"
+    },
+    "cityName": {
+      "@id": "amadeus:cityName",
+      "@type": "xsd:string"
+    },
+    "stateCode": {
+      "@id": "amadeus:stateCode",
+      "@type": "xsd:string"
+    },
+    "stateName": {
+      "@id": "amadeus:stateName",
+      "@type": "xsd:string"
+    },
+    "postalBox": {
+      "@id": "amadeus:postalBox",
+      "@type": "xsd:string"
+    },
+    "deviceType": {
+      "@id": "amadeus:deviceType",
+      "@type": "xsd:string"
+    },
+    "countryCallingCode": {
+      "@id": "amadeus:countryCallingCode",
+      "@type": "xsd:string"
+    },
+    "areaCode": {
+      "@id": "amadeus:areaCode",
+      "@type": "xsd:string"
+    },
+    "extension": {
+      "@id": "amadeus:extension",
+      "@type": "xsd:string"
+    },
+    "href": {
+      "@id": "amadeus:href",
+      "@type": "@id"
+    },
+    "methods": {
+      "@id": "amadeus:methods",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "departure": {
+      "@id": "amadeus:departure",
+      "@type": "xsd:string"
+    },
+    "arrival": {
+      "@id": "amadeus:arrival",
+      "@type": "xsd:string"
+    },
+    "aircraft": {
+      "@id": "amadeus:aircraft",
+      "@type": "xsd:string"
+    },
+    "operating": {
+      "@id": "amadeus:operating",
+      "@type": "xsd:string"
+    },
+    "duration": {
+      "@id": "amadeus:duration",
+      "@type": "xsd:string"
+    },
+    "stops": {
+      "@id": "amadeus:stops",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "x": {
+      "@id": "amadeus:x",
+      "@type": "xsd:integer"
+    },
+    "y": {
+      "@id": "amadeus:y",
+      "@type": "xsd:integer"
+    },
+    "subType": {
+      "@id": "amadeus:subType",
+      "@type": "xsd:string"
+    },
+    "travelerType": {
+      "@id": "amadeus:travelerType",
+      "@type": "xsd:string"
+    },
+    "cardNumber": {
+      "@id": "amadeus:cardNumber",
+      "@type": "xsd:string"
+    },
+    "certificateNumber": {
+      "@id": "amadeus:certificateNumber",
+      "@type": "xsd:string"
+    },
+    "rules": {
+      "@id": "amadeus:rules",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "deckType": {
+      "@id": "amadeus:deckType",
+      "@type": "xsd:string"
+    },
+    "deckConfiguration": {
+      "@id": "amadeus:deckConfiguration",
+      "@type": "xsd:string"
+    },
+    "facilities": {
+      "@id": "amadeus:facilities",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "seats": {
+      "@id": "amadeus:seats",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "isChargeable": {
+      "@id": "amadeus:isChargeable",
+      "@type": "xsd:boolean"
+    },
+    "status": {
+      "@id": "amadeus:status",
+      "@type": "xsd:integer"
+    },
+    "code": {
+      "@id": "amadeus:code",
+      "@type": "xsd:integer"
+    },
+    "title": {
+      "@id": "amadeus:title",
+      "@type": "xsd:string"
+    },
+    "detail": {
+      "@id": "amadeus:detail",
+      "@type": "xsd:string"
+    },
+    "newAircraft": {
+      "@id": "amadeus:newAircraft",
+      "@type": "xsd:string"
+    },
+    "arrivalAt": {
+      "@id": "amadeus:arrivalAt",
+      "@type": "xsd:dateTime"
+    },
+    "departureAt": {
+      "@id": "amadeus:departureAt",
+      "@type": "xsd:dateTime"
+    },
+    "circumstances": {
+      "@id": "amadeus:circumstances",
+      "@type": "xsd:string"
+    },
+    "notApplicable": {
+      "@id": "amadeus:notApplicable",
+      "@type": "xsd:boolean"
+    },
+    "maxPenaltyAmount": {
+      "@id": "amadeus:maxPenaltyAmount",
+      "@type": "xsd:string"
+    },
+    "descriptions": {
+      "@id": "amadeus:descriptions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "lang": {
+      "@id": "amadeus:lang",
+      "@type": "xsd:string"
+    },
+    "legSpace": {
+      "@id": "amadeus:legSpace",
+      "@type": "xsd:integer"
+    },
+    "spaceUnit": {
+      "@id": "amadeus:spaceUnit",
+      "@type": "xsd:string"
+    },
+    "tilt": {
+      "@id": "amadeus:tilt",
+      "@type": "xsd:string"
+    },
+    "amenityType": {
+      "@id": "amadeus:amenityType",
+      "@type": "xsd:string"
+    },
+    "medias": {
+      "@id": "amadeus:medias",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "dateOfBirth": {
+      "@id": "amadeus:dateOfBirth",
+      "@type": "xsd:date"
+    },
+    "gender": {
+      "@id": "amadeus:gender",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "documents": {
+      "@id": "amadeus:documents",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "amadeus:address",
+      "@type": "xsd:string"
+    },
+    "purpose": {
+      "@id": "amadeus:purpose",
+      "@type": "xsd:string"
+    },
+    "weight": {
+      "@id": "amadeus:weight",
+      "@type": "xsd:integer"
+    },
+    "weightUnit": {
+      "@id": "amadeus:weightUnit",
+      "@type": "xsd:string"
+    },
+    "cabin": {
+      "@id": "amadeus:cabin",
+      "@type": "xsd:string"
+    },
+    "column": {
+      "@id": "amadeus:column",
+      "@type": "xsd:string"
+    },
+    "row": {
+      "@id": "amadeus:row",
+      "@type": "xsd:string"
+    },
+    "position": {
+      "@id": "amadeus:position",
+      "@type": "xsd:string"
+    },
+    "coordinates": {
+      "@id": "amadeus:coordinates",
+      "@type": "xsd:string"
+    },
+    "width": {
+      "@id": "amadeus:width",
+      "@type": "xsd:integer"
+    },
+    "length": {
+      "@id": "amadeus:length",
+      "@type": "xsd:integer"
+    },
+    "startSeatRow": {
+      "@id": "amadeus:startSeatRow",
+      "@type": "xsd:integer"
+    },
+    "endSeatRow": {
+      "@id": "amadeus:endSeatRow",
+      "@type": "xsd:integer"
+    },
+    "startWingsX": {
+      "@id": "amadeus:startWingsX",
+      "@type": "xsd:integer"
+    },
+    "endWingsX": {
+      "@id": "amadeus:endWingsX",
+      "@type": "xsd:integer"
+    },
+    "startWingsRow": {
+      "@id": "amadeus:startWingsRow",
+      "@type": "xsd:integer"
+    },
+    "endWingsRow": {
+      "@id": "amadeus:endWingsRow",
+      "@type": "xsd:integer"
+    },
+    "exitRowsX": {
+      "@id": "amadeus:exitRowsX",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "characteristicsCodes": {
+      "@id": "amadeus:characteristicsCodes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "travelerPricing": {
+      "@id": "amadeus:travelerPricing",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "self": {
+      "@id": "amadeus:self",
+      "@type": "xsd:string"
+    },
+    "class": {
+      "@id": "amadeus:class",
+      "@type": "xsd:string"
+    },
+    "flightOfferId": {
+      "@id": "amadeus:flightOfferId",
+      "@type": "xsd:string"
+    },
+    "segmentId": {
+      "@id": "amadeus:segmentId",
+      "@type": "xsd:string"
+    },
+    "decks": {
+      "@id": "amadeus:decks",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "aircraftCabinAmenities": {
+      "@id": "amadeus:aircraftCabinAmenities",
+      "@type": "xsd:string"
+    },
+    "availableSeatsCounters": {
+      "@id": "amadeus:availableSeatsCounters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "mediaType": {
+      "@id": "amadeus:mediaType",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "amadeus:value",
+      "@type": "xsd:integer"
+    },
+    "excessRate": {
+      "@id": "amadeus:excessRate",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "amadeus:quantity",
+      "@type": "xsd:integer"
+    }
+  }
+}

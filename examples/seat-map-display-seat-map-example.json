@@ -1,0 +1,21 @@
+{
+  "type": "seatmap",
+  "id": "500123",
+  "self": "sample-value",
+  "departure": "sample-value",
+  "arrival": "sample-value",
+  "carrierCode": "DL",
+  "number": "212",
+  "operating": "sample-value",
+  "aircraft": "sample-value",
+  "class": "Y",
+  "flightOfferId": "1",
+  "segmentId": "1",
+  "decks": [
+    "sample-value"
+  ],
+  "aircraftCabinAmenities": "ECONOMY",
+  "availableSeatsCounters": [
+    "sample-value"
+  ]
+}

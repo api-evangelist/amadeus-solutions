@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/flight-offers-search-date-time-type-structure.json",
+  "name": "DateTimeType",
+  "description": "DateTimeType schema",
+  "type": "object",
+  "properties": {
+    "date": {
+      "description": "Dates are specified in the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) YYYY-MM-DD format, e.g. 2018-12-25",
+      "type": "date",
+      "example": "2018-09-22"
+    },
+    "time": {
+      "description": "Local time. hh:mm:ss format, e.g 10:30:00",
+      "type": "string",
+      "example": "10:30:00"
+    }
+  },
+  "required": [
+    "date"
+  ]
+}

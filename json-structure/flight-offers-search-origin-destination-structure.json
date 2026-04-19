@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/flight-offers-search-origin-destination-structure.json",
+  "name": "OriginDestination",
+  "description": "OriginDestination schema",
+  "allOf": [
+    {
+      "$ref": "#/definitions/OriginDestinationLight"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "originRadius": {
+          "description": "Include other possible locations around the point, located less than this distance in kilometers away. Max:300\n\nCan not be combined with \"dateWindow\" or \"timeWindow\".\n",
+          "type": "double",
+          "example": 200
+        },
+        "alternativeOriginsCodes": {
+          "type": "array",
+          "description": "Set of alternative origin location, such as a city or an airport. Currently, only the locations defined in [IATA](http://www.iata.org/publications/Pages/code-search.aspx) are supported.",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "name": "code",
+            "type": "string"
+          },
+          "example": [
+            "LON",
+            "MUC"
+          ]
+        },
+        "destinationRadius": {
+          "description": "Include other possible locations around the point, located less than this distance in kilometers away. Max:300\n\nCan not be combined with \"dateWindow\" or \"timeWindow\".\n",
+          "type": "double",
+          "example": 200
+        },
+        "alternativeDestinationsCodes": {
+          "type": "array",
+          "description": "Set of alternative destination location, such as a city or an airport. Currently, only the locations defined in [IATA](http://www.iata.org/publications/Pages/code-search.aspx) are supported.",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "name": "code",
+            "type": "string"
+          }
+        },
+        "departureDateTimeRange": {
+          "description": "Approximate date and time of departure, specified as a local date and time range.",
+          "$ref": "#/definitions/DateTimeRange"
+        },
+        "arrivalDateTimeRange": {
+          "description": "Approximate date and time of arrival, specified as a local date and time range.",
+          "$ref": "#/definitions/DateTimeRange"
+        }
+      }
+    }
+  ]
+}

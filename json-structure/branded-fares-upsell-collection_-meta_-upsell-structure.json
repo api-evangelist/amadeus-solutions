@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/branded-fares-upsell-collection_-meta_-upsell-structure.json",
+  "name": "Collection_Meta_Upsell",
+  "description": "Collection_Meta_Upsell schema",
+  "properties": {
+    "count": {
+      "type": "int32",
+      "example": 1
+    },
+    "oneWayUpselledCombinations": {
+      "type": "array",
+      "items": {
+        "name": "oneWayUpselledCombinations",
+        "properties": {
+          "flightOfferId": {
+            "type": "string"
+          },
+          "upselledFlightOfferIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "type": "object"
+}

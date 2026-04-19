@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-collection_-meta-schema.json",
+  "title": "Collection_Meta",
+  "description": "Collection_Meta schema",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "example": 1
+    },
+    "oneWayCombinations": {
+      "type": "array",
+      "items": {
+        "title": "oneWayCombinations",
+        "properties": {
+          "originDestinationId": {
+            "type": "string"
+          },
+          "flightOfferIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "type": "object"
+}

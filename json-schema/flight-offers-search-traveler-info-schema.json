@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-search-traveler-info-schema.json",
+  "title": "TravelerInfo",
+  "description": "TravelerInfo schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "example": 1
+    },
+    "travelerType": {
+      "$ref": "#/definitions/TravelerType"
+    },
+    "associatedAdultId": {
+      "type": "string",
+      "description": "if type=\"HELD_INFANT\", corresponds to the adult travelers's id who will share the seat"
+    }
+  },
+  "required": [
+    "id",
+    "travelerType"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-structure/flight-offers-price-flight-offer-pricing-in-structure.json",
+  "name": "FlightOfferPricingIn",
+  "description": "input parameter to price flight offers element",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "the resource name",
+      "type": "string",
+      "example": "flight-offer-pricing"
+    },
+    "flightOffers": {
+      "description": "list of flight offer to price",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/definitions/FlightOffer"
+      }
+    },
+    "payments": {
+      "description": "payment information for retrieve eventual credit card fees",
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "name": "Payment",
+        "type": "object",
+        "properties": {
+          "brand": {
+            "$ref": "#/definitions/PaymentBrand"
+          },
+          "binNumber": {
+            "description": "The first 6 digits of the credit card",
+            "type": "int32",
+            "example": 123456,
+            "pattern": "[0-9]{6}"
+          },
+          "flightOfferIds": {
+            "description": "Id of the flightOffers to pay",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": {
+              "type": "string"
+            },
+            "example": "1"
+          }
+        }
+      }
+    },
+    "travelers": {
+      "description": "list of travelers",
+      "type": "array",
+      "maxItems": 18,
+      "items": {
+        "$ref": "#/definitions/Traveler"
+      }
+    }
+  },
+  "required": [
+    "type",
+    "flightOffers"
+  ]
+}

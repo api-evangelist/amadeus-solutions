@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-price-bags-schema.json",
+  "title": "Bags",
+  "description": "checked bag",
+  "allOf": [
+    {
+      "$ref": "#/definitions/BaggageAllowance"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Type of service",
+          "type": "string",
+          "example": "CHECKED_BAG"
+        },
+        "price": {
+          "$ref": "#/definitions/ElementaryPrice"
+        },
+        "bookableByItinerary": {
+          "description": "Specify if the service is bookable by itinerary  or for all itineraries",
+          "type": "boolean",
+          "example": false
+        },
+        "segmentIds": {
+          "description": "Id of the segment concerned by the service",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": "1"
+        },
+        "travelerIds": {
+          "description": "Id of the traveler concerned by the service",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": "1"
+        }
+      }
+    }
+  ]
+}

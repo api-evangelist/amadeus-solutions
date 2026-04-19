@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/flight-offers-price-credit-card-fee-schema.json",
+  "title": "CreditCardFee",
+  "description": "CreditCardFee schema",
+  "type": "object",
+  "properties": {
+    "brand": {
+      "$ref": "#/definitions/PaymentBrand"
+    },
+    "amount": {
+      "type": "string",
+      "example": "1"
+    },
+    "currency": {
+      "type": "string",
+      "example": "USD"
+    },
+    "flightOfferId": {
+      "description": "Id of the flightOffer concerned by the credit card fee",
+      "type": "string",
+      "example": "1"
+    }
+  }
+}

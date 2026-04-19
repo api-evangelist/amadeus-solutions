@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/json-schema/seat-map-display-aircraft-cabin-amenities-schema.json",
+  "title": "AircraftCabinAmenities",
+  "description": "Type of available amenities for a given flight",
+  "type": "object",
+  "properties": {
+    "power": {
+      "$ref": "#/definitions/AircraftCabinAmenities_Power"
+    },
+    "seat": {
+      "$ref": "#/definitions/Amenity_Seat"
+    },
+    "wifi": {
+      "$ref": "#/definitions/AircraftCabinAmenities_Wifi"
+    },
+    "entertainment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AircraftCabinAmenities_Entertainment"
+      }
+    },
+    "food": {
+      "$ref": "#/definitions/AircraftCabinAmenities_Food"
+    },
+    "beverage": {
+      "$ref": "#/definitions/AircraftCabinAmenities_Beverage"
+    }
+  }
+}

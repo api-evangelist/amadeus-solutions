@@ -1,0 +1,9 @@
+{
+  "legSpace": 33,
+  "spaceUnit": "CENTIMENTERS",
+  "tilt": "FULL_FLAT",
+  "amenityType": "SEAT",
+  "medias": [
+    "sample-value"
+  ]
+}
