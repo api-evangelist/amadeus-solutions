@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amadeus Seat Map Display
+  version: 1.0.0
+extends: openapi/amadeus-solutions-seat-map-display-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: Amadeus Solutions
+      x-apievangelist-aid: amadeus-solutions:seat-map-display-api
+      x-apievangelist-category: Flights
+      x-apievangelist-auth: oauth2-client-credentials
+      x-apievangelist-environments:
+        test: https://test.api.amadeus.com
+        production: https://api.amadeus.com
+      x-apievangelist-tags:
+        - Airlines
+        - Ancillaries
+        - Flights
+        - Seats
+      x-apievangelist-error-format: jsonapi

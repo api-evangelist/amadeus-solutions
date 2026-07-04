@@ -1,0 +1,43 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/ + https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      Self-Service APIs authenticate with OAuth 2.0 client_credentials grant,
+      exchanging API key/secret for a bearer access token per the Amadeus
+      Authorization guide.
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect discovery document or ID tokens; token endpoint is a plain OAuth2 client_credentials flow.
+  - id: jsonapi-errors
+    conforms: true
+    evidence: >-
+      Error responses return an `errors` array of Issue objects with
+      status/code/title/detail/source fields, matching the JSON:API error
+      object shape.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors use the JSON:API errors array, not application/problem+json /
+      RFC 9457 problem details.
+  - id: pagination
+    conforms: false
+    evidence: >-
+      The flight shopping endpoints cap results with a `max` parameter and a
+      Collection_Meta count; no offset/limit or link-based pagination is
+      defined on these operations.
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key header is defined for the shopping/pricing operations in these specs.
+  - id: fhir-r4
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim2
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: psd2
+    conforms: false

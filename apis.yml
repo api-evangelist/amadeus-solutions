@@ -20,7 +20,7 @@ description: >-
   management, and a suite of APIs enabling developers to search, price, book,
   and manage travel across air, hotel, and ground transportation.
 created: '2024-01-01'
-modified: '2026-04-19'
+modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
   - aid: amadeus-solutions:flight-offers-search-api
@@ -45,6 +45,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
       - type: OpenAPI
         url: openapi/amadeus-solutions-flight-offers-search-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-solutions-flight-offers-search-overlay.yaml
   - aid: amadeus-solutions:flight-offers-price-api
     name: Flight Offers Price API
     description: >-
@@ -64,6 +66,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
       - type: OpenAPI
         url: openapi/amadeus-solutions-flight-offers-price-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-solutions-flight-offers-price-overlay.yaml
   - aid: amadeus-solutions:branded-fares-upsell-api
     name: Branded Fares Upsell API
     description: >-
@@ -83,6 +87,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
       - type: OpenAPI
         url: openapi/amadeus-solutions-branded-fares-upsell-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-solutions-branded-fares-upsell-overlay.yaml
   - aid: amadeus-solutions:seat-map-display-api
     name: Seat Map Display API
     description: >-
@@ -102,6 +108,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
       - type: OpenAPI
         url: openapi/amadeus-solutions-seat-map-display-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-solutions-seat-map-display-overlay.yaml
 common:
   - type: Portal
     url: https://developers.amadeus.com/
@@ -142,6 +150,20 @@ common:
     url: capabilities/flight-shopping.yaml
   - type: Vocabulary
     url: vocabulary/amadeus-solutions-vocabulary.yaml
+  - type: Packages
+    url: packages/amadeus-solutions-packages.yml
+  - type: WellKnown
+    url: well-known/amadeus-solutions-well-known.yml
+  - type: MCPServer
+    url: mcp/amadeus-solutions-mcp.yml
+  - type: LLMsTxt
+    url: llms/amadeus-solutions-llms.txt
+  - type: Conformance
+    url: conformance/amadeus-solutions-conformance.yml
+  - type: ErrorCatalog
+    url: errors/amadeus-solutions-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/amadeus-solutions-lifecycle.yml
   - type: Solutions
     data:
       - name: Amadeus Nevio (Airline Retailing)

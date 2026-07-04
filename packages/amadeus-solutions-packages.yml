@@ -1,0 +1,36 @@
+generated: '2026-06-20'
+method: searched
+source: https://github.com/amadeus4dev
+packages:
+  - language: python
+    registry: pypi
+    name: amadeus
+    version: 12.0.0
+    url: https://pypi.org/project/amadeus/
+    repository: https://github.com/amadeus4dev/amadeus-python
+    install: pip install amadeus
+    official: true
+  - language: javascript
+    registry: npm
+    name: amadeus
+    version: 11.0.0
+    url: https://www.npmjs.com/package/amadeus
+    repository: https://github.com/amadeus4dev/amadeus-node
+    install: npm install amadeus
+    official: true
+  - language: java
+    registry: maven
+    name: com.amadeus:amadeus-java
+    version: 10.0.0
+    url: https://central.sonatype.com/artifact/com.amadeus/amadeus-java
+    repository: https://github.com/amadeus4dev/amadeus-java
+    install: "implementation 'com.amadeus:amadeus-java:10.0.0'"
+    official: true
+  - language: ruby
+    registry: rubygems
+    name: amadeus
+    version: 5.2.1
+    url: https://rubygems.org/gems/amadeus
+    repository: https://github.com/amadeus4dev/amadeus-ruby
+    install: gem install amadeus
+    official: true

@@ -1,0 +1,39 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/ servers + apis.yml common[] links
+versioning:
+  scheme: uri-path
+  note: >-
+    Each Self-Service API is versioned independently in the URL path. Current
+    versions harvested from the OpenAPI basePath: Flight Offers Search v2,
+    Flight Offers Price v1, Branded Fares Upsell v1, Seat Map Display v1.
+  api_versions:
+    - api: flight-offers-search
+      version: v2
+      spec_version: 2.9.1
+    - api: flight-offers-price
+      version: v1
+      spec_version: 1.3.0
+    - api: branded-fares-upsell
+      version: v1
+      spec_version: 1.2.0
+    - api: seat-map-display
+      version: v1
+      spec_version: 1.9.2
+environments:
+  - name: test
+    host: https://test.api.amadeus.com
+  - name: production
+    host: https://api.amadeus.com
+deprecation:
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    RFC 8594 Sunset/Deprecation header support is not documented for the
+    Self-Service APIs; version deprecation is communicated via the developer
+    portal changelog rather than response headers.
+sla:
+  url: null
+  note: No public uptime SLA is published for the Self-Service tier.
+status_page: https://developers.amadeus.com/status
+deprecated_operations: []

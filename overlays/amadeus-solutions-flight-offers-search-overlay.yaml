@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amadeus Flight Offers Search
+  version: 1.0.0
+extends: openapi/amadeus-solutions-flight-offers-search-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: Amadeus Solutions
+      x-apievangelist-aid: amadeus-solutions:flight-offers-search-api
+      x-apievangelist-category: Flights
+      x-apievangelist-auth: oauth2-client-credentials
+      x-apievangelist-environments:
+        test: https://test.api.amadeus.com
+        production: https://api.amadeus.com
+      x-apievangelist-tags:
+        - Airlines
+        - Flights
+        - Search
+        - Travel
+      x-apievangelist-error-format: jsonapi

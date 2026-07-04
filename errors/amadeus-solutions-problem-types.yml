@@ -1,0 +1,53 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/ 4xx/5xx responses
+format: jsonapi
+note: >-
+  Amadeus Self-Service errors are returned as a JSON:API `errors` array of
+  Issue objects (fields: status, code, title, detail, source), not RFC 9457
+  application/problem+json. HTTP-level statuses are listed first; the numeric
+  `code` values below are Amadeus application error codes documented in the
+  OpenAPI 400 response tables.
+http_statuses:
+  - status: 400
+    title: Bad Request
+    description: Invalid or malformed request parameters.
+    source_operations:
+      - openapi/amadeus-solutions-flight-offers-search-openapi.yaml#searchFlightOffers
+      - openapi/amadeus-solutions-flight-offers-price-openapi.yaml#quoteAirOffers
+      - openapi/amadeus-solutions-branded-fares-upsell-openapi.yaml#upsellAirOffers
+      - openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromFlightOffer
+  - status: 404
+    title: Not Found
+    description: The requested resource (e.g. order) could not be found.
+    source_operations:
+      - openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromOrder
+  - status: 500
+    title: Internal Server Error
+    description: Unexpected error on the Amadeus platform.
+    source_operations:
+      - openapi/amadeus-solutions-flight-offers-search-openapi.yaml#searchFlightOffers
+      - openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromFlightOffer
+amadeus_issue_codes:
+  - code: 425
+    title: INVALID DATE
+  - code: 477
+    title: INVALID FORMAT
+  - code: 572
+    title: INVALID OPTION
+  - code: 2668
+    title: PARAMETER COMBINATION INVALID/RESTRICTED
+  - code: 2781
+    title: INVALID LENGTH
+  - code: 4481
+    title: FLIGHT DOES NOT OPERATE ON DATE REQUESTED
+  - code: 4926
+    title: INVALID DATA RECEIVED
+  - code: 8791
+    title: SEAT MAP DISPLAY REQUEST IS OUTSIDE SYSTEM DATE RANGE
+  - code: 10661
+    title: MAXIMUM NUMBER OF OCCURRENCES EXCEEDED
+  - code: 32171
+    title: MANDATORY DATA MISSING
+  - code: 39397
+    title: UNABLE TO RETRIEVE UPSELL OFFER

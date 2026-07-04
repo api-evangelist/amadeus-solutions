@@ -1,0 +1,61 @@
+generated: '2026-06-20'
+method: searched
+source: probed /.well-known/* on API and developer hosts
+note: >-
+  No real well-known discovery documents were found. The API hosts
+  (test.api.amadeus.com, api.amadeus.com) return 404 for every probed path.
+  The developer portal (developers.amadeus.com) returns HTTP 200 with
+  content-type text/html for every path, i.e. a single-page-app catch-all
+  (soft 404), not a genuine well-known document, so nothing was saved.
+hosts:
+  - host: https://test.api.amadeus.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://api.amadeus.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://developers.amadeus.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        content_type: text/html
+        saved: false
+        reason: soft-404 SPA shell, not a real security.txt
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: text/html
+        saved: false
+        reason: soft-404 SPA shell, not real OIDC metadata
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: text/html
+        saved: false
+        reason: soft-404 SPA shell, not real RFC 8414 metadata
+      - path: /.well-known/api-catalog
+        status: 200
+        content_type: text/html
+        saved: false
+        reason: soft-404 SPA shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        content_type: text/html
+        saved: false
+        reason: soft-404 SPA shell, not a real ai-plugin.json

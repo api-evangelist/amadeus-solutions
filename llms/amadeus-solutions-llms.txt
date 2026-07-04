@@ -1,0 +1,37 @@
+# Amadeus Solutions
+
+> Amadeus is a leading technology partner for the global travel industry, providing technology solutions for airlines, airports, hotels, travel sellers, and corporate travel. The Amadeus Self-Service APIs enable developers to search, price, book, and manage travel across air, hotel, and ground transportation. This index covers the flight shopping surface: Flight Offers Search, Flight Offers Price, Branded Fares Upsell, and Seat Map Display. All APIs use OAuth 2.0 (client_credentials) bearer tokens and are served from test.api.amadeus.com (sandbox) and api.amadeus.com (production).
+
+generated: 2026-06-20 (generated from apis.yml + repo artifacts; no provider llms.txt found)
+
+## APIs
+
+- [Flight Offers Search API](https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search): Search and compare flight offers from 400+ airlines; one-way, round-trip, multi-city.
+- [Flight Offers Price API](https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price): Confirm availability and price of a flight offer before booking.
+- [Branded Fares Upsell API](https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell): Return branded-fare upgrade/upsell options for given flight offers.
+- [Seat Map Display API](https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display): Return cabin layout, seat availability, and seat pricing for a flight.
+
+## Specs
+
+- [Flight Offers Search OpenAPI](openapi/amadeus-solutions-flight-offers-search-openapi.yaml)
+- [Flight Offers Price OpenAPI](openapi/amadeus-solutions-flight-offers-price-openapi.yaml)
+- [Branded Fares Upsell OpenAPI](openapi/amadeus-solutions-branded-fares-upsell-openapi.yaml)
+- [Seat Map Display OpenAPI](openapi/amadeus-solutions-seat-map-display-openapi.yaml)
+
+## SDKs
+
+- [Python SDK (amadeus)](https://github.com/amadeus4dev/amadeus-python): pip install amadeus
+- [Node.js SDK (amadeus)](https://github.com/amadeus4dev/amadeus-node): npm install amadeus
+- [Java SDK (com.amadeus:amadeus-java)](https://github.com/amadeus4dev/amadeus-java)
+- [Ruby SDK (amadeus)](https://github.com/amadeus4dev/amadeus-ruby): gem install amadeus
+
+## Docs
+
+- [Developer Portal](https://developers.amadeus.com/)
+- [Getting Started](https://developers.amadeus.com/self-service/apis-docs/guides/developer-guides/)
+- [Authentication (OAuth 2.0)](https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262)
+- [Sign Up](https://developers.amadeus.com/register)
+- [Pricing](https://developers.amadeus.com/pricing)
+- [Support](https://developers.amadeus.com/support)
+- [Status Page](https://developers.amadeus.com/status)
+- [GitHub Organization](https://github.com/amadeus4dev)
