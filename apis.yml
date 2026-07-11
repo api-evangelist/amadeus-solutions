@@ -111,6 +111,10 @@ apis:
       - type: Overlay
         url: overlays/amadeus-solutions-seat-map-display-overlay.yaml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/amadeus-solutions-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amadeus-solutions-domain-security.yml
   - type: Portal
     url: https://developers.amadeus.com/
   - type: GettingStarted
