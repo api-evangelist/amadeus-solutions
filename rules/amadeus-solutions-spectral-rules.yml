@@ -1,3 +1,16 @@
+# amadeus-solutions — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - query-params-casing: camel @ 67% (n=18)
+#   - operationid-casing: camel @ 100% (n=6)
+#   - operation-documents-400: 100% adherence
+#   - merge: kept 15 existing, added 4 measured, upgraded 0
+#   - added: query-params-casing, operationid-casing, operation-documents-400, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   info-title-required:
     description: API title must be present.
@@ -27,7 +40,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
+        match: ^https://
   operation-summary-required:
     description: Every operation must have a summary.
     severity: error
@@ -42,7 +55,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^Amadeus "
+        match: '^Amadeus '
   operation-id-required:
     description: Every operation must have an operationId.
     severity: error
@@ -106,4 +119,34 @@ rules:
     then:
       function: pattern
       functionOptions:
-        notMatch: "/$"
+        notMatch: /$
+  query-params-casing:
+    description: Query parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: camel
+  operationid-casing:
+    description: Operation IDs should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  operation-documents-400:
+    description: Operations should document a 400 response (documented on 100% of this API's operations).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].responses
+    then:
+      field: '400'
+      function: truthy
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
+      function: truthy
