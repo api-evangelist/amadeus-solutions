@@ -11,7 +11,18 @@ tags:
   - Travel
   - Travel Technology
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amadeus-solutions.png
 description: >-
   Amadeus is a leading technology partner for the global travel industry,
   providing technology solutions for airlines, airports, hotels, travel sellers,
@@ -23,93 +34,54 @@ created: '2024-01-01'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-  - aid: amadeus-solutions:flight-offers-search-api
-    name: Flight Offers Search API
-    description: >-
-      The Amadeus Flight Offers Search API enables searching and comparing
-      flight offers from over 400 airlines. Search one-way, round-trip, or
-      multi-city itineraries with cabin class, baggage, and pricing filters.
-      Returns comprehensive fare details including branded fares, ancillaries,
-      and pricing breakdowns.
-    humanURL: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
-    baseURL: https://test.api.amadeus.com/v2
-    tags:
-      - Airlines
-      - Flights
-      - Search
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
-      - type: APIReference
-        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
-      - type: OpenAPI
-        url: openapi/amadeus-solutions-flight-offers-search-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-solutions-flight-offers-search-overlay.yaml
-  - aid: amadeus-solutions:flight-offers-price-api
-    name: Flight Offers Price API
-    description: >-
-      The Amadeus Flight Offers Price API confirms the availability and price
-      of a flight offer before booking. Validates current pricing, seat
-      availability, and fare conditions for offers returned by Flight Offers
-      Search, ensuring accurate pricing at time of reservation.
-    humanURL: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
-    baseURL: https://test.api.amadeus.com/v1
-    tags:
-      - Airlines
-      - Flights
-      - Pricing
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
-      - type: OpenAPI
-        url: openapi/amadeus-solutions-flight-offers-price-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-solutions-flight-offers-price-overlay.yaml
-  - aid: amadeus-solutions:branded-fares-upsell-api
-    name: Branded Fares Upsell API
-    description: >-
-      The Amadeus Branded Fares Upsell API provides upgrade options for
-      travelers, enabling upsell from basic economy to premium economy, business,
-      or first class branded fares. Returns available upgrade options with fare
-      families, services included, and price differences.
-    humanURL: https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
-    baseURL: https://test.api.amadeus.com/v1
-    tags:
-      - Airlines
-      - Ancillaries
-      - Flights
-      - Upsell
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
-      - type: OpenAPI
-        url: openapi/amadeus-solutions-branded-fares-upsell-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-solutions-branded-fares-upsell-overlay.yaml
-  - aid: amadeus-solutions:seat-map-display-api
-    name: Seat Map Display API
-    description: >-
-      The Amadeus Seat Map Display API provides cabin layout and seat
-      availability information for a flight. Returns detailed seat maps with
-      seat characteristics, availability status, and pricing for seat selection
-      during the booking process.
-    humanURL: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
-    baseURL: https://test.api.amadeus.com/v1
-    tags:
-      - Airlines
-      - Ancillaries
-      - Flights
-      - Seats
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
-      - type: OpenAPI
-        url: openapi/amadeus-solutions-seat-map-display-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-solutions-seat-map-display-overlay.yaml
+- aid: amadeus-solutions:amadeus-solutions-display-seatmaps-api
+  name: Amadeus Solutions Display SeatMaps API
+  description: The Display SeatMaps API from Amadeus Solutions — 1 operation(s) for display seatmaps.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+  baseURL: https://test.api.amadeus.com/v2
+  tags:
+  - Display SeatMaps
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-solutions-display-seatmaps-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
+- aid: amadeus-solutions:amadeus-solutions-shopping-api
+  name: Amadeus Solutions Shopping API
+  description: The Shopping API from Amadeus Solutions — 3 operation(s) for shopping.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+  baseURL: https://test.api.amadeus.com/v2
+  tags:
+  - Shopping
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-solutions-shopping-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
 common:
   - type: AgenticAccess
     url: agentic-access/amadeus-solutions-agentic-access.yml
