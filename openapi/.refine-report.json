@@ -1,0 +1,16 @@
+{
+  "provider": "amadeus-solutions",
+  "sources": [
+    "amadeus-solutions-display-seatmaps-api-openapi.yml",
+    "amadeus-solutions-shopping-api-openapi.yml"
+  ],
+  "outputs": [
+    "amadeus-solutions-display-seatmaps-api-openapi.yml",
+    "amadeus-solutions-shopping-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
