@@ -83,6 +83,8 @@ apis:
   - type: Documentation
     url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
 common:
+  - type: Overlay
+    url: overlays/amadeus-solutions-branded-fares-upsell-overlay.yaml
   - type: AgenticAccess
     url: agentic-access/amadeus-solutions-agentic-access.yml
   - type: VulnerabilityDisclosure
