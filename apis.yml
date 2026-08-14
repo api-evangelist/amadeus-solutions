@@ -1,6 +1,5 @@
 aid: amadeus-solutions
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/amadeus-solutions/refs/heads/main/apis.yml
 name: Amadeus Solutions
 tags:
   - Airlines
@@ -24,64 +23,54 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amadeus-solutions.png
 description: >-
-  Amadeus is a leading technology partner for the global travel industry,
-  providing technology solutions for airlines, airports, hotels, travel sellers,
-  and corporate travel. The Amadeus platform includes a global distribution
-  system (GDS), passenger service systems, airport operations, hospitality
-  management, and a suite of APIs enabling developers to search, price, book,
-  and manage travel across air, hotel, and ground transportation.
+  Amadeus is a leading technology partner for the global travel industry, providing technology solutions for airlines,
+  airports, hotels, travel sellers, and corporate travel. The Amadeus platform includes a global distribution system
+  (GDS), passenger service systems, airport operations, hospitality management, and a suite of APIs enabling developers
+  to search, price, book, and manage travel across air, hotel, and ground transportation.
 created: '2024-01-01'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: amadeus-solutions:amadeus-solutions-display-seatmaps-api
-  name: Amadeus Solutions Display SeatMaps API
-  description: The Display SeatMaps API from Amadeus Solutions — 1 operation(s) for display seatmaps.
-  humanURL: >-
-    https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
-  baseURL: https://test.api.amadeus.com/v2
-  tags:
-  - Display SeatMaps
-  properties:
-  - type: OpenAPI
-    url: openapi/amadeus-solutions-display-seatmaps-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
-  - type: APIReference
-    url: >-
-      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
-  - type: Documentation
-    url: >-
-      https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
-- aid: amadeus-solutions:amadeus-solutions-shopping-api
-  name: Amadeus Solutions Shopping API
-  description: The Shopping API from Amadeus Solutions — 3 operation(s) for shopping.
-  humanURL: >-
-    https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
-  baseURL: https://test.api.amadeus.com/v2
-  tags:
-  - Shopping
-  properties:
-  - type: OpenAPI
-    url: openapi/amadeus-solutions-shopping-api-openapi.yml
-  - type: Documentation
-    url: >-
-      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
-  - type: APIReference
-    url: >-
-      https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
-  - type: Documentation
-    url: >-
-      https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
+  - aid: amadeus-solutions:amadeus-solutions-display-seatmaps-api
+    name: Amadeus Solutions Display SeatMaps API
+    description: The Display SeatMaps API from Amadeus Solutions — 1 operation(s) for display seatmaps.
+    humanURL: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+    baseURL: https://test.api.amadeus.com/v2
+    tags:
+      - Display SeatMaps
+    properties:
+      - type: OpenAPI
+        url: openapi/amadeus-solutions-display-seatmaps-api-openapi.yml
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+      - type: APIReference
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
+  - aid: amadeus-solutions:amadeus-solutions-shopping-api
+    name: Amadeus Solutions Shopping API
+    description: The Shopping API from Amadeus Solutions — 3 operation(s) for shopping.
+    humanURL: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+    baseURL: https://test.api.amadeus.com/v2
+    tags:
+      - Shopping
+    properties:
+      - type: OpenAPI
+        url: openapi/amadeus-solutions-shopping-api-openapi.yml
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search
+      - type: APIReference
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-search/api-reference
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/flight-offers-price
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/branded-fares-upsell
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/flights/api-doc/seat-map-display
 common:
   - type: Overlay
     url: overlays/amadeus-solutions-branded-fares-upsell-overlay.yaml
@@ -126,8 +115,6 @@ common:
     url: https://developers.amadeus.com/status
   - type: SpectralRules
     url: rules/amadeus-solutions-spectral-rules.yml
-  - type: NaftikoCapability
-    url: capabilities/flight-shopping.yaml
   - type: Vocabulary
     url: vocabulary/amadeus-solutions-vocabulary.yaml
   - type: Packages
@@ -148,90 +135,78 @@ common:
     data:
       - name: Amadeus Nevio (Airline Retailing)
         description: >-
-          Next-generation airline retailing platform enabling offer and order
-          management for airlines pursuing NDC-based retailing strategies.
+          Next-generation airline retailing platform enabling offer and order management for airlines pursuing NDC-based
+          retailing strategies.
       - name: Amadeus Altéa (Passenger Service System)
         description: >-
-          Core passenger service system for full-service carriers providing
-          reservations, inventory management, and departure control.
+          Core passenger service system for full-service carriers providing reservations, inventory management, and
+          departure control.
       - name: Amadeus Selling Platform Connect
         description: >-
-          Distribution platform for travel agencies providing GDS access,
-          NDC content, and LCC integrations through a unified API.
+          Distribution platform for travel agencies providing GDS access, NDC content, and LCC integrations through a
+          unified API.
       - name: Amadeus Cytric (Corporate Travel)
         description: >-
-          Corporate travel and expense management platform integrated with
-          Microsoft Teams and major enterprise collaboration tools.
+          Corporate travel and expense management platform integrated with Microsoft Teams and major enterprise
+          collaboration tools.
       - name: Amadeus Airport IT
         description: >-
-          Airport operations technology including baggage, passenger
-          experience, ground handling, and border control solutions.
+          Airport operations technology including baggage, passenger experience, ground handling, and border control
+          solutions.
   - type: Features
     data:
       - name: Global Flight Inventory
         description: >-
-          Access flight schedules and availability from over 400 airlines
-          through a single integration with the Amadeus GDS.
+          Access flight schedules and availability from over 400 airlines through a single integration with the Amadeus
+          GDS.
       - name: NDC Content Support
         description: >-
-          Connect to airline NDC offers alongside traditional GDS content
-          for a comprehensive view of available fares and ancillaries.
+          Connect to airline NDC offers alongside traditional GDS content for a comprehensive view of available fares
+          and ancillaries.
       - name: Branded Fares and Fare Families
         description: >-
-          Display branded fare options with included services, restrictions,
-          and price differences to enable informed purchase decisions.
+          Display branded fare options with included services, restrictions, and price differences to enable informed
+          purchase decisions.
       - name: Ancillary Services
         description: >-
-          Access seat selection, baggage, meals, and other ancillary
-          services through integrated APIs alongside fare shopping.
+          Access seat selection, baggage, meals, and other ancillary services through integrated APIs alongside fare
+          shopping.
       - name: Real-Time Pricing
         description: >-
-          Confirm current pricing and availability before booking with the
-          Flight Offers Price API to prevent pricing discrepancies.
+          Confirm current pricing and availability before booking with the Flight Offers Price API to prevent pricing
+          discrepancies.
   - type: UseCases
     data:
       - name: Flight Search and Booking Engine
         description: >-
-          Build complete flight shopping experiences searching, pricing, and
-          booking flights across hundreds of airlines through a unified API.
+          Build complete flight shopping experiences searching, pricing, and booking flights across hundreds of airlines
+          through a unified API.
       - name: Airline Retailing Platform
         description: >-
-          Power airline direct channels with offer creation, branded fares,
-          seat maps, and ancillary upsell capabilities.
+          Power airline direct channels with offer creation, branded fares, seat maps, and ancillary upsell
+          capabilities.
       - name: Corporate Travel Management
         description: >-
-          Enable policy-compliant flight shopping for corporate travelers with
-          fare filtering, approval workflows, and reporting.
+          Enable policy-compliant flight shopping for corporate travelers with fare filtering, approval workflows, and
+          reporting.
       - name: Travel Metasearch
         description: >-
-          Aggregate flight offers for price comparison across airlines with
-          detailed fare family and service information.
+          Aggregate flight offers for price comparison across airlines with detailed fare family and service
+          information.
       - name: AI Travel Assistant
-        description: >-
-          Enable conversational travel assistants to search and compare
-          flights using natural language queries.
+        description: Enable conversational travel assistants to search and compare flights using natural language queries.
   - type: Integrations
     data:
       - name: Amadeus Flight Create Orders
-        description: >-
-          Convert searched and priced flight offers into confirmed bookings
-          using the Flight Create Orders API.
+        description: Convert searched and priced flight offers into confirmed bookings using the Flight Create Orders API.
       - name: Amadeus Hotel Search
-        description: >-
-          Combine flight search with hotel search to build complete trip
-          planning experiences for travelers.
+        description: Combine flight search with hotel search to build complete trip planning experiences for travelers.
       - name: Amadeus Points of Interest
-        description: >-
-          Enhance destination content alongside flight search with
-          attractions, experiences, and activities data.
+        description: Enhance destination content alongside flight search with attractions, experiences, and activities data.
       - name: Amadeus Transfer Search
-        description: >-
-          Add ground transportation options to flight itineraries through
-          the Transfer Search API.
+        description: Add ground transportation options to flight itineraries through the Transfer Search API.
       - name: Outpayce (Payments)
-        description: >-
-          Integrate travel payments processing through Amadeus Outpayce for
-          airline and OTA payment acceptance.
+        description: Integrate travel payments processing through Amadeus Outpayce for airline and OTA payment acceptance.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
