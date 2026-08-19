@@ -2,44 +2,37 @@ generated: '2026-06-20'
 method: derived
 status: candidate
 source: openapi/ operations
-note: >-
-  No official Model Context Protocol server exists for the Amadeus
-  Self-Service REST APIs. Amadeus publishes a separate, product-specific
-  "Amadeus Discover MCP" (docs.amadeus-discover.com/mcp) for its Discover
-  content product, which is not the same surface as these Self-Service
-  flight APIs. Public GitHub "mcp-amadeus" projects are community-built and
-  not first-party. The tools below are a candidate mapping derived
-  one-per-operation from the OpenAPI definitions in this repo.
+note: No official Model Context Protocol server exists for the Amadeus Self-Service REST APIs. Amadeus
+  publishes a separate, product-specific "Amadeus Discover MCP" (docs.amadeus-discover.com/mcp) for its
+  Discover content product, which is not the same surface as these Self-Service flight APIs. Public GitHub
+  "mcp-amadeus" projects are community-built and not first-party. The tools below are a candidate mapping
+  derived one-per-operation from the OpenAPI definitions in this repo.
 server:
   name: amadeus-self-service
   transport: stdio
 tools:
-  - name: search_flight_offers
-    description: >-
-      Search and compare flight offers across 400+ airlines from posted
-      search criteria (POST /shopping/flight-offers).
-    source_operation: openapi/amadeus-solutions-flight-offers-search-openapi.yaml#searchFlightOffers
-  - name: get_flight_offers
-    description: >-
-      Return a list of flight offers based on GET query search criteria
-      (GET /shopping/flight-offers).
-    source_operation: openapi/amadeus-solutions-flight-offers-search-openapi.yaml#getFlightOffers
-  - name: price_flight_offers
-    description: >-
-      Confirm availability and final price of given flight offers before
-      booking (POST /shopping/flight-offers/pricing).
-    source_operation: openapi/amadeus-solutions-flight-offers-price-openapi.yaml#quoteAirOffers
-  - name: upsell_flight_offers
-    description: >-
-      Return branded-fare upsell offers for given flight offers
-      (POST /shopping/flight-offers/upselling).
-    source_operation: openapi/amadeus-solutions-branded-fares-upsell-openapi.yaml#upsellAirOffers
-  - name: get_seatmap_from_order
-    description: >-
-      Return all seat maps for a given order (GET /shopping/seatmaps).
-    source_operation: openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromOrder
-  - name: get_seatmap_from_flight_offer
-    description: >-
-      Return all seat maps for a given flight offer
-      (POST /shopping/seatmaps).
-    source_operation: openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromFlightOffer
+- name: search_flight_offers
+  description: Search and compare flight offers across 400+ airlines from posted search criteria (POST
+    /shopping/flight-offers).
+  source_operation: openapi/amadeus-solutions-flight-offers-search-openapi.yaml#searchFlightOffers
+- name: get_flight_offers
+  description: Return a list of flight offers based on GET query search criteria (GET /shopping/flight-offers).
+  source_operation: openapi/amadeus-solutions-flight-offers-search-openapi.yaml#getFlightOffers
+- name: price_flight_offers
+  description: Confirm availability and final price of given flight offers before booking (POST /shopping/flight-offers/pricing).
+  source_operation: openapi/amadeus-solutions-flight-offers-price-openapi.yaml#quoteAirOffers
+- name: upsell_flight_offers
+  description: Return branded-fare upsell offers for given flight offers (POST /shopping/flight-offers/upselling).
+  source_operation: openapi/amadeus-solutions-branded-fares-upsell-openapi.yaml#upsellAirOffers
+- name: get_seatmap_from_order
+  description: Return all seat maps for a given order (GET /shopping/seatmaps).
+  source_operation: openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromOrder
+- name: get_seatmap_from_flight_offer
+  description: Return all seat maps for a given flight offer (POST /shopping/seatmaps).
+  source_operation: openapi/amadeus-solutions-seat-map-display-openapi.yaml#getSeatmapFromFlightOffer
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
