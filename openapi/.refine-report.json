@@ -1,16 +1,33 @@
 {
   "provider": "amadeus-solutions",
   "sources": [
-    "amadeus-solutions-display-seatmaps-api-openapi.yml",
-    "amadeus-solutions-shopping-api-openapi.yml"
+    "_original/amadeus-solutions-branded-fares-upsell-openapi.yaml",
+    "_original/amadeus-solutions-flight-offers-price-openapi.yaml",
+    "_original/amadeus-solutions-flight-offers-search-openapi.yaml",
+    "_original/amadeus-solutions-seat-map-display-openapi.yaml"
   ],
   "outputs": [
-    "amadeus-solutions-display-seatmaps-api-openapi.yml",
-    "amadeus-solutions-shopping-api-openapi.yml"
+    "amadeus-solutions-shopping-api-openapi.yml",
+    "amadeus-solutions-display-seatmaps-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (4 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amadeus-solutions-branded-fares-upsell-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "amadeus-solutions-branded-fares-upsell-openapi.yaml: declared missing tag: Shopping",
+    "amadeus-solutions-flight-offers-price-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "amadeus-solutions-flight-offers-price-openapi.yaml: declared missing tag: Shopping",
+    "amadeus-solutions-flight-offers-search-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "amadeus-solutions-flight-offers-search-openapi.yaml: declared missing tag: Shopping",
+    "amadeus-solutions-seat-map-display-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "amadeus-solutions-seat-map-display-openapi.yaml: declared missing tag: Display SeatMaps",
+    "tag 'Shopping' spans 3 source specs (amadeus-solutions-branded-fares-upsell-openapi.yaml, amadeus-solutions-flight-offers-price-openapi.yaml, amadeus-solutions-flight-offers-search-openapi.yaml): per-path servers applied",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "amadeus-solutions-display-seatmaps-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amadeus-solutions-shopping-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
